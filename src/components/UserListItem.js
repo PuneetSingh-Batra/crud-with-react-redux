@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
 import { connect } from 'react-redux';
+import { Link } from 'react-router';
 
 class UserListItem extends React.Component {
 
@@ -22,11 +23,11 @@ class UserListItem extends React.Component {
         <td>{ user.name }</td>
         <td>{ user.job }</td>
         <td>
-          <a href={ "/user-edit/" + user.id }>
+          <Link to={ "/user-edit/" + user.id }>
             <Button bsSize="xsmall">
               Edit <Glyphicon glyph="edit" />
             </Button>
-          </a>
+          </Link>
           </td>
         <td>
           <Button data-id={ user.id } data-name={ user.name } onClick={ this.showDeleteModal.bind(this) }>
